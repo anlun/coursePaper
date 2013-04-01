@@ -24,6 +24,8 @@
 % }
 \usepackage[hidelinks]{hyperref}
 
+\usepackage{wrapfig}
+
 % \renewcommand{\theenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
 % \renewcommand{\labelenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
 % \renewcommand{\theenumii}{.\arabic{enumii}}% Меняем везде перечисления на цифра.цифра
@@ -34,9 +36,11 @@
 % \newcommand{\imgh}[3]{\begin{figure}[h]\center{\includegraphics[width=#1]{#2}}\caption{#3}\label{ris:#2}\end{figure}}
 
 \begin{document}
-\input{title}% это титульный лист
+\input{title}
+\newpage
 \input{introduction}
-%\input{RefProject-Title}% это титульный лист
+\newpage
+\input{links}
 %\input{RefProject-Description}% это описание
 %\input{RefProject-Algoritm}% это описание алгоритмов
 %\input{RefProject-Finish}% заключение
