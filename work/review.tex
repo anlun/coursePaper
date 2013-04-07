@@ -45,18 +45,26 @@
 \begin{enumerate}
 \item присваивание;
 \item While;
-\item If;
+\item If
 \item последовательное выполнение;
 \item чтение с занесение в переменную;
-\item запись выражения.
+\item печать целочисленного выражения.
 \end{enumerate}
+
+На рисунке~\ref{fig:lEx} приведен пример программы на языке L. В данном случае, это программа, которая считывает с консоли два числа, а потом возводит второе число в степень, равную первому.
 
 \begin{figure}[h!]
 	\centering
 	\inputminted{pascal}{codes/lEx.l}
-	\caption{Пример программы на языке L. Быстрое возведение в степень}
+	\caption{Быстрое возведение в степень на L}
 	\label{fig:lEx}
 \end{figure}
 
-Pretty printer для этого языка выглядит подобным образом:
-\inputminted{haskell}{codes/lHughesPrinter}
+Часть pretty printer
+\footnote{В примере используется неописанный выше комбинатор \textbf{(<+>)}. Это просто сокращение записи. \textit{a <+> b = a <> (text << >>) <> b}. }
+для языка L, отвечающая за представление операторов, показана на рисунке~\ref{fig:lHughesPrinter}.
+\begin{figure}[h!]
+	\inputminted{haskell}{codes/lHughesPrinter.hs}
+	\caption{Pretty printer, написанный с помощью библиотеки Хьюза}
+	\label{fig:lHughesPrinter}
+\end{figure}
