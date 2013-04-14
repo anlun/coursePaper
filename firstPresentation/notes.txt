@@ -1,0 +1,4 @@
+1) Pretty-printing deals with representing tree-based structures
+	in a width-bounded area in a top down, left to right order,
+	and in such a way that the logical structure of the tree is
+	clearly represented in the layout.
