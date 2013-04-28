@@ -10,19 +10,20 @@
 Так, с помощью функции \textbf{text} по строке получается документ, оператор \textbf{(<>)} соединяет два документа горизонтально (см. рисунок~\ref{fig:hughesHorComp}), а оператор \textbf{(\$\$)} соединяет документы вертикально (см. рисунок~\ref{fig:hughesVertComp}).
 
 \begin{figure}[h!]
-	\begin{minipage}[b]{0.45\linewidth}
+	\begin{subfigure}[b]{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{hughesHorComp}
-		\caption{}
+		\caption{Комбинатор \textbf{(<>)}}
 		\label{fig:hughesHorComp}
-	\end{minipage}
+	\end{subfigure}
 	\hspace{0.5cm}
-	\begin{minipage}[b]{0.45\linewidth}
+	\begin{subfigure}[b]{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{hughesVertComp}
-		\caption{}
+		\caption{Комбинатор \textbf{(\$\$)}}
 		\label{fig:hughesVertComp}
-	\end{minipage}
+	\end{subfigure}
+	\caption{Пример работы комбинаторов}
 \end{figure}
 
 В обычном случае функция \textbf{nest} добавляет к каждой строке заданное число ведущих пробелов. Но в комбинации с функцией \textbf{sep} может вообще не поменять документ.
