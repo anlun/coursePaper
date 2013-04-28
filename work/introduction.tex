@@ -25,14 +25,16 @@
 
 \begin{figure}[h!]
 	\centering
-	\inputminted{c}{codes/wikiExUnfor.c}
+	% \inputminted{c}{codes/wikiExUnfor.c}
+	\lstinputlisting[language=C]{codes/wikiExUnfor.c}
 	\caption{Неформатированный код}
 	\label{fig:wikiExUnfor}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\inputminted{c}{codes/wikiExBSD.c}
+	% \inputminted{c}{codes/wikiExBSD.c}
+	\lstinputlisting[language=C]{codes/wikiExBSD.c}
 	\caption{Форматированный код}
 	\label{fig:wikiExBSD}
 \end{figure}
@@ -53,13 +55,15 @@
 На рисунке~\ref{fig:seqImage} изображено синтаксическое дерево последовательности двух операторов. Такое дерево, согласно заданному правилу, может быть напечатано одним из двух вариантов (рисунки ~\ref{fig:seqCode1}, ~\ref{fig:seqCode2}).
 
 \begin{figure}[h]
-	\inputminted{c}{codes/seqCode1.java}
+	% \inputminted{c}{codes/seqCode1.java}
+	\lstinputlisting[language=Java]{codes/seqCode1.java}
 	\caption{Последовательные операторы в строчку}
 	\label{fig:seqCode1}
 \end{figure}
 
 \begin{figure}[h]
-	\inputminted{c}{codes/seqCode2.java}
+	% \inputminted{c}{codes/seqCode2.java}
+	\lstinputlisting[language=Java]{codes/seqCode2.java}
 	\caption{Последовательные операторы в несколько строк}
 	\label{fig:seqCode2}
 \end{figure}
@@ -67,18 +71,19 @@
 Выбор происходит в зависимости от ширины вывода. Так, при ширине равной 35 символов (длина строки <<System.out.println(“Hello world”); >>), должен выбираться вариант, изображенный на рисунке~\ref{fig:seqCode2}, так как код на рисунке~\ref{fig:seqCode1} имеет ширину более 35 символов.
 Могут быть заданы и более сложные условия.
 
-\newpage
-
 Рассмотрим другой пример. Пусть нам нужно текстовое представление синтаксического дерева конструкции If, и заданы шаблонами c рисунков~\ref{fig:ifTemplate2} и \ref{fig:ifTemplate1}.
 
 \begin{figure}[h]
 	\begin{subfigure}[b]{0.45\textwidth}
-		\inputminted{haskell}{codes/ifTemplate2.hs}
+		% \inputminted{haskell}{codes/ifTemplate2.hs}
+		\lstinputlisting[language=Haskell]{codes/ifTemplate2.hs}
 		\caption{}
 		\label{fig:ifTemplate2}
 	\end{subfigure}
+	\hspace{1cm}
 	\begin{subfigure}[b]{0.45\textwidth}
-		\inputminted{haskell}{codes/ifTemplate1.hs}
+		% \inputminted{haskell}{codes/ifTemplate1.hs}
+		\lstinputlisting[language=Haskell]{codes/ifTemplate1.hs}
 		\caption{}
 		\label{fig:ifTemplate1}
 	\end{subfigure}
@@ -89,16 +94,17 @@
 Причем вариант, изображенный на рисунке~\ref{fig:ifTemplate2} выбирается в случае, если условие и ветки могут быть напечатаны в одну строчку. Тогда для деревьев, представленных на рисунках \ref{fig:ifImage1} и \ref{fig:ifImage2}, будут напечатаны коды с рисунков \ref{fig:ifCode1} и \ref{fig:ifCode2} соответственно.
 
 \begin{figure}[h!]
-	\begin{subfigure}[b]{0.65\linewidth}
+	\begin{subfigure}[b]{0.60\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{if1}
 		\caption{}
 		\label{fig:ifImage1}
 	\end{subfigure}
 	\hspace{0.5cm}
-	\begin{subfigure}[b]{0.25\linewidth}
+	\begin{subfigure}[b]{0.30\linewidth}
 		\centering
-		\inputminted{haskell}{codes/ifCode1.hs}
+		% \inputminted{haskell}{codes/ifCode1.hs}
+		\lstinputlisting[language=Haskell]{codes/ifCode1.hs}
 		\caption{}
 		\label{fig:ifCode1}
 	\end{subfigure}
@@ -107,16 +113,17 @@
 \end{figure}
 
 \begin{figure}[h!]
-	\begin{subfigure}[b]{0.65\linewidth}
+	\begin{subfigure}[b]{0.60\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{if2}
 		\caption{}
 		\label{fig:ifImage2}
 	\end{subfigure}
 	\hspace{0.5cm}
-	\begin{subfigure}[b]{0.25\linewidth}
+	\begin{subfigure}[b]{0.30\linewidth}
 		\centering
-		\inputminted{haskell}{codes/ifCode2.hs}
+		% \inputminted{haskell}{codes/ifCode2.hs}
+		\lstinputlisting[language=Haskell]{codes/ifCode2.hs}
 		\caption{}
 		\label{fig:ifCode2}
 	\end{subfigure}

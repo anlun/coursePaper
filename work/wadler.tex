@@ -5,7 +5,8 @@
 В \cite{wadler} Филипп Вадлер описал свою комбинаторную бибилиотеку для pretty printing на языке Haskell. Она является модификацией библиотеки Хьюза, описанной в предыдущем разделе. Код библиотеки сократился с \~110 строк до \~80 строк, и, по исследованию Вадлера, на 30\% увеличилась скорость вычисления раскладки документа.
 
 Рассмотрим основые комбинаторы этой библиотеки:
-\inputminted{haskell}{codes/wadlerBasicOperations.hs}
+% \inputminted{haskell}{codes/wadlerBasicOperations.hs}
+\lstinputlisting[language=Haskell]{codes/wadlerBasicOperations.hs}
 
 Вадлер решил отказаться от двух разных способов соединения документов, оставив лишь горизонтальную склейку. Но для того, чтобы можно было выражать не только однострочные документы, в библиотеке Вадлера появилась функция \textbf{line}. Она создает документ, который может быть переведен в символ новой строки или в пробел.
 Функция \textbf{group} имеет то же назначение, что и оператор \textbf{sep} в библиотеке Хьюза, но работает не со списком документов, а с одним документом, и по сути предоставляет альтернативы для алгоритма перевода документа в \textit{String}: в документе, на который подействовал \textbf{group}, либо все вхождения \textbf{line} заменяются на пробел, либо остаются переводами строки (если они не являются частью вложенных \textit{group}-документов).
@@ -16,22 +17,26 @@
 По другому его написать нельзя --- мы хотим, чтобы последовательные операторы печатались на новых строках. Но если такая конструкция попадет внутрь \textit{group}-документа, то последовательные строчки могут склеится пробелом, что сделает код некорректным, так как в Python несколько операторов на одной строке должны разделяться символом <<;>>.
 
 \begin{figure}[h!]
-	\inputminted{haskell}{codes/pythonPrinter.hs}
+	% \inputminted{haskell}{codes/pythonPrinter.hs}
+	\lstinputlisting[language=Haskell]{codes/pythonPrinter.hs}
 	\caption{Принтер для последовательных операторов в Python}
 	\label{fig:pythonPrinter}
 \end{figure}
 
 Так корректный код (см. рисунок~\ref{fig:pythonCode}) может превратиться в некорректный (см. рисунок~\ref{fig:pythonCodeBad}).
 \begin{figure}[h!]
-	\begin{minipage}[b]{0.45\linewidth}
-		\inputminted{python}{codes/pythonCode.py}
+	\begin{subfigure}[b]{0.45\linewidth}
+		% \inputminted{python}{codes/pythonCode.py}
+		\lstinputlisting[language=Python]{codes/pythonCode.py}
 		\caption{}
 		\label{fig:pythonCode}
-	\end{minipage}
+	\end{subfigure}
 	\hspace{0.5cm}
-	\begin{minipage}[b]{0.45\linewidth}
-		\inputminted{python}{codes/pythonCodeBad.py}
+	\begin{subfigure}[b]{0.45\linewidth}
+		% \inputminted{python}{codes/pythonCodeBad.py}
+		\lstinputlisting[language=Python]{codes/pythonCodeBad.py}
 		\caption{}
 		\label{fig:pythonCodeBad}
-	\end{minipage}
+	\end{subfigure}
+	\caption{Пример работы принтера для языка Python}
 \end{figure}

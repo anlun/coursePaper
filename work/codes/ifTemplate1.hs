@@ -1,3 +1,3 @@
-if ‘условие’
-then ‘ветка 1’
-else ‘ветка 2’
+if 'expression'
+then 'branch 1'
+else 'branch 2'

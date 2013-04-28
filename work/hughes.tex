@@ -5,7 +5,8 @@
 % рассказать об оптимальном
 
 В данной библиотеке ключевым типом является \textbf{Doc}. Основные комбинаторы для составления документа:
-\inputminted{haskell}{codes/hughesBasicOperators.hs}
+% \inputminted{haskell}{codes/hughesBasicOperators.hs}
+\lstinputlisting[language=Haskell]{codes/hughesBasicOperators.hs}
 
 Так, с помощью функции \textbf{text} по строке получается документ, оператор \textbf{(<>)} соединяет два документа горизонтально (см. рисунок~\ref{fig:hughesHorComp}), а оператор \textbf{(\$\$)} соединяет документы вертикально (см. рисунок~\ref{fig:hughesVertComp}).
 
@@ -29,7 +30,8 @@
 
 Функция \textbf{nest} добавляет к каждой строке документа заданное число ведущих пробелов. Функция \textbf{sep} является ключевым комбинатором, который в этой библиотеке позволяет задавать плавающую раскладку документа. Она принимает как параметр список документов, а на выходе получается документ, который представляет из себя либо вертикальную склейку элементов списка, либо горизонтальную склейку (в этом случае если к документу из списка применялась функция \textbf{nest}, то к этому документу не добавляются ведущие пробелы, то есть попросту игнорируется применение \textbf{nest}), причем между документами вставляется пробельный символ. Вариант раскладки выбирается функцией \textbf{pretty}:
 
-\inputminted{haskell}{codes/hughesPretty.hs}
+% \inputminted{haskell}{codes/hughesPretty.hs}
+\lstinputlisting[language=Haskell]{codes/hughesPretty.hs}
 
 Кроме самого документа, функция \textbf{pretty} также принимает два числа: максимальную длину и максимальную наполненность строки. Здесь наполненность строки значит длину текста без ведущих пробельных символов. В ходе работы этой функции и происходит выбор раскладки документа, полученного с помощью комбинатора \textbf{sep}. Если горизонтальная раскладка удовлетворяет ограничениям на ширину строки, то она и выбирается. Иначе -- вертикальная раскладка.
 
@@ -38,19 +40,20 @@
 
 Рассмотрим пример описания pretty printer с помощью библиотеки Хьюза. Для этого используем учебный язык L. Он состоит из небольшого числа операторов:
 \begin{enumerate}
-\item присваивание;
-\item цикл с предусловием;
-\item ветвление;
-\item последовательное выполнение;
-\item чтение с занесение в переменную;
-\item печать целочисленного выражения.
+	\item присваивание;
+	\item цикл с предусловием;
+	\item ветвление;
+	\item последовательное выполнение;
+	\item чтение с занесение в переменную;
+	\item печать целочисленного выражения.
 \end{enumerate}
 
 На рисунке~\ref{fig:lEx} приведен пример программы на языке L. В данном случае, это программа, которая считывает с консоли два числа, а потом возводит второе число в степень, равную первому.
 
 \begin{figure}[h!]
 	\centering
-	\inputminted{pascal}{codes/lEx.l}
+	% \inputminted{pascal}{codes/lEx.l}
+	\lstinputlisting[language=llang]{codes/lEx.l}
 	\caption{Быстрое возведение в степень на L}
 	\label{fig:lEx}
 \end{figure}
@@ -58,8 +61,9 @@
 Часть принтера для языка L, отвечающая за представление операторов, показана на рисунке~\ref{fig:lHughesPrinter}.
 В примере используется неописанный выше комбинатор \textbf{(<+>)}. Это просто сокращение записи: \textit{a <+> b = a <> (text << >>) <> b}.
 \begin{figure}[h!]
-	\inputminted{haskell}{codes/lHughesPrinter.hs}
-	\caption{Pretty printer, написанный с помощью библиотеки Хьюза}
+	% \inputminted{haskell}{codes/lHughesPrinter.hs}
+	\lstinputlisting[language=Haskell]{codes/lHughesPrinter.hs}
+	\caption{Принтер, написанный с помощью библиотеки Хьюза}
 	\label{fig:lHughesPrinter}
 \end{figure}
 
@@ -67,15 +71,17 @@
 То есть, в случае многострочного выражения в операторе \textit{write}, напечатать закрывающую скобку на уровне самого оператора.
 
 \begin{figure}[h!]
-	\inputminted{pascal}{codes/lGoodWriteEx.l}
+	% \inputminted{pascal}{codes/lGoodWriteEx.l}
+	\lstinputlisting[language=llang]{codes/lGoodWriteEx.l}
 	\caption{Желательный пример печати конструкции \textbf{write}}
 	\label{fig:lGoodWriteEx}
 \end{figure}
 
 С помощью реализации принтера с рисунка~\ref{fig:lHughesPrinter}, в данном случае для оператора \textit{write} получится немного не то (см. рисунок~\ref{fig:lCurWriteEx}).
 \begin{figure}[h!]
-	\inputminted{pascal}{codes/lCurWriteEx.l}
-	\caption{Результат для текущего pretty printer}
+	% \inputminted{pascal}{codes/lCurWriteEx.l}
+	\lstinputlisting[language=llang]{codes/lCurWriteEx.l}
+	\caption{Результат для изначального принтера конструкции \textbf{write}}
 	\label{fig:lCurWriteEx}
 \end{figure}
 
@@ -83,13 +89,15 @@
 то для многострочного выражения все получится правильно, но в случае однострочного --- появится лишний пробел перед закрывающей скобкой.
 
 \begin{figure}[h!]
-	\inputminted{pascal}{codes/lBadWriteEx.l}
-	\caption{Результат для измененого принтера}
+	% \inputminted{pascal}{codes/lBadWriteEx.l}
+	\lstinputlisting[language=llang]{codes/lBadWriteEx.l}
+	\caption{Результат для измененого принтера конструкции \textbf{write}}
 	\label{fig:lBadWriteEx}
 \end{figure}
 
 \begin{figure}[h!]
-	\inputminted{haskell}{codes/lHughesWriteChange.hs}
-	\caption{Измененный принтер для конструкции \textbf{write}}
+	% \inputminted{haskell}{codes/lHughesWriteChange.hs}
+	\lstinputlisting[language=Haskell]{codes/lHughesWriteChange.hs}
+	\caption{Измененный принтер конструкции \textbf{write}}
 	\label{fig:lHughesWriteChange}
 \end{figure}

@@ -14,9 +14,9 @@
 % \makeatother
 
 \usepackage{geometry} % Меняем поля страницы
-\geometry{left=2cm}% левое поле
+\geometry{left=2.5cm}% левое поле
 \geometry{right=1.5cm}% правое поле
-\geometry{top=1cm}% верхнее поле
+\geometry{top=2cm}% верхнее поле
 \geometry{bottom=2cm}% нижнее поле
 
 % \usepackage{hyperref}
@@ -36,8 +36,26 @@
 
 % \newcommand{\imgh}[3]{\begin{figure}[h]\center{\includegraphics[width=#1]{#2}}\caption{#3}\label{ris:#2}\end{figure}}
 
+\lstdefinelanguage{llang}{
+	keywords={skip, do, while, read, write, if, then, else},
+	sensitive=true,
+	%%basicstyle=\small,
+	commentstyle=\scriptsize\rmfamily,
+	keywordstyle=\ttfamily\underbar,
+	identifierstyle=\ttfamily,
+	basewidth={0.5em,0.5em},
+	columns=fixed,
+	fontadjust=true,
+	literate={->}{{$\to$}}1
+}
+
+\lstset{
+	language=llang
+}
+
 \begin{document}
 \input{title}
+
 \newpage
 \tableofcontents % это оглавление, которое генерируется автоматически
 \newpage
