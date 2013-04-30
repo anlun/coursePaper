@@ -9,7 +9,7 @@
 % \inputminted{haskell}{codes/hughesBasicOperators.hs}
 \lstinputlisting[language=Haskell]{codes/hughesBasicOperators.hs}
 
-Так, с помощью функции \lstinline[language=Haskell]{text} по строке получается документ, оператор \lstinline[language=Haskell]{(<>)} соединяет два документа горизонтально (см. рисунок~\ref{fig:hughesHorComp}), а оператор \lstinline[language=Haskell]{(\$\$)} соединяет документы вертикально (см. рисунок~\ref{fig:hughesVertComp}).
+Так, с помощью функции \lstinline[language=Haskell]{text} по строке получается документ, оператор \textbf{(<>)} соединяет два документа горизонтально (см. рисунок~\ref{fig:hughesHorComp}), а оператор \textbf{(\$\$)} соединяет документы вертикально (см. рисунок~\ref{fig:hughesVertComp}).
 
 \begin{figure}[ht]
 	\begin{subfigure}[b]{0.45\linewidth}
@@ -39,27 +39,7 @@
 
 % Возможно, стоит сделать после обзора всех библиотек
 
-Рассмотрим пример описания pretty printer с помощью библиотеки Хьюза. Для этого используем учебный язык L. Он состоит из небольшого числа операторов:
-\begin{enumerate}
-	\item присваивание;
-	\item цикл с предусловием;
-	\item ветвление;
-	\item последовательное выполнение;
-	\item чтение с занесение в переменную;
-	\item печать целочисленного выражения.
-\end{enumerate}
-
-На рисунке~\ref{fig:lEx} приведен пример программы на языке L. В данном случае, это программа, которая считывает с консоли два числа, а потом возводит второе число в степень, равную первому.
-
-\begin{figure}[h!]
-	\centering
-	% \inputminted{pascal}{codes/lEx.l}
-	\lstinputlisting[language=llang]{codes/lEx.l}
-	\caption{Быстрое возведение в степень на L}
-	\label{fig:lEx}
-\end{figure}
-
-Часть принтера для языка L, отвечающая за представление операторов, показана на рисунке~\ref{fig:lHughesPrinter}.
+Рассмотрим пример описания принтера с помощью библиотеки Хьюза. Для этого используем учебный язык L. Часть принтера для языка L, отвечающая за представление операторов, показана на рисунке~\ref{fig:lHughesPrinter}.
 В примере используется неописанный выше комбинатор \lstinline[language=Haskell]{(<+>)}. Это просто сокращение записи: \lstinline[language=Haskell]{a <+> b = a <> (text " ") <> b}.
 \begin{figure}[h!]
 	% \inputminted{haskell}{codes/lHughesPrinter.hs}
