@@ -17,7 +17,7 @@
 Эти шаблоны задают именно такое представление \lstinline{write}, которого мы добивались в обзоре принтер-библиотек.
 Благодаря шаблонам, необходимый результат получается просто и наглядно.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{subfigure}[h]{0.45\textwidth}
 		\lstinputlisting{codes/writeTmplt1.l}
 		\caption{}
@@ -32,9 +32,9 @@
 \end{figure}
 
 Изначально в языке разметки не было конструкции «\lstinline{@* N @*}». Она кажется несколько неестественной. Действительно, при описаниях принтеров из введения и обзора ни разу не упоминалось, что нужно ограничение, которое не просто проверяет раскладку поддерева на однострочность.
-Появление данной конструкции было вызвано тем, что многие поддеревья раскладовались в одну строчку, даже слишком длинные. Рассмотрим случай вложенных операторов \lstinline{if-then-else}. Зададим шаблоны для печати оператора \lstinline{if-then-else} только с помощью «\lstinline{@-}» и «\lstinline{@| @|}» (см. рис. \ref{fig:flatBadIfTmplt} и \ref{fig:multBadIfTmplt}).
+Появление данной конструкции было вызвано тем, что многие поддеревья раскладовались в одну строчку. Получались слишком длинные строки. Рассмотрим случай вложенных операторов \lstinline{if-then-else}. Зададим шаблоны для печати оператора \lstinline{if-then-else} только с помощью «\lstinline{@-}» и «\lstinline{@| @|}» (см. рис. \ref{fig:flatBadIfTmplt} и \ref{fig:multBadIfTmplt}).
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{subfigure}[h]{0.45\textwidth}
 		\lstinputlisting{codes/flatBadIfTmplt.l}
 		\caption{Однострочный вариант}
@@ -50,22 +50,34 @@
 
 Тогда дерево с вложенными \lstinline{if-then-else} будет представлено однострочно (см. рис. \ref{fig:nestedIf} и \ref{fig:nestedIfFlatCode}), чего хотелось бы избежать.
 
-\begin{figure}[ht]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.6\textwidth]{nestedIf}
 	\caption{Пример дерева вложенных \lstinline{if-then-else}}
 	\label{fig:nestedIf}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
 	\centering
 	\lstinputlisting{codes/nestedIf.l}
 	\caption{Представление с помощью шаблона с рис. \ref{fig:flatBadIfTmplt}}
 	\label{fig:nestedIfFlatCode}
 \end{figure}
 
+Но если воспользоваться «\lstinline{@* N @*}», то можно переписать однострочный шаблон так, что подобная проблема не возникнет (см. рис. \ref{fig:flatGoodIfTmplt} и \ref{fig:nestedIfCode}), так как в подобных ситуациях однострочный вариант просто не будет выбираться.
 
-TODO: рассказать про шаблоны конструкций высоты больше 1
+\begin{figure}[h!]
+	\lstinputlisting{codes/flatGoodIfTmplt.l}
+	\caption{Новый однострочный вариант шаблона для конструкции \lstinline{if-then-else}}
+	\label{fig:flatGoodIfTmplt}	
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\lstinputlisting{codes/goodNestedIf.l}
+	\caption{Представление с помощью новых шаблонов}
+	\label{fig:nestedIfCode}
+\end{figure}
 
 \subsection{Построение образцов}
 
