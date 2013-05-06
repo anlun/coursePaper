@@ -156,3 +156,19 @@
 
 Описанный подход был реализован в качестве принтера языка L на языке OCaml\footnote{http://ocaml.org}. Для написания синтаксического анализатора была использована библиотека Ostap\footnote{http://oops.math.spbu.ru/projects/ostap}.
 
+В качестве примера работы принтера с разными шаблонами рассмотрим уже упоминавшуюся программу быстрого возведения в степень (см. рис. \ref{fig:lEx}).
+С помощью шаблонов, приведенных в дополнении~\ref{app:1}, принтер печатает программу в виде, изображенном на рисунке \ref{fig:firstTemplatePow}.
+
+\begin{figure}[h!]
+	\lstinputlisting{codes/firstTemplatePow.l}
+	\caption{Программа быстрого возведения в степень на языке L, напечатанная с помощью шаблонов из дополнения~\ref{app:1}}
+	\label{fig:firstTemplatePow}
+\end{figure}
+
+Шаблоны, приведенные в дополнении~\ref{app:2}, представляют программу несколько иным образом (см. рис. \ref{fig:secondTemplatePow}).
+
+\begin{figure}[h!]
+	\lstinputlisting{codes/secondTemplatePow.l}
+	\caption{Программа быстрого возведения в степень на языке L, напечатанная с помощью шаблонов из дополнения~\ref{app:2}}
+	\label{fig:secondTemplatePow}
+\end{figure}
