@@ -1,10 +1,12 @@
-read(k);
-read(n);
-r = 1;
-while k > 0
-      do if k % 2 == 1
-            then r = r * n
-            else skip;
-         n = n * n;
-         k = k / 2;
-write(r)
+{
+	read(k);
+	read(n);
+	r = 1;
+	while k > 0
+	      do if k % 2 == 1
+	            then r = r * n
+	            else skip;
+	         n = n * n;
+	         k = k / 2;
+	write(r)
+}
