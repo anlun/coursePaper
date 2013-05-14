@@ -79,11 +79,6 @@ while @- do
 t_end
 
 t_start
-while @- do 
-  @-
-t_end
-
-t_start
 while @|
       @|
 do
