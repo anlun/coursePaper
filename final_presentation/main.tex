@@ -30,7 +30,7 @@
 	Научный руководитель: к.ф.-м.н. Булычев Д.Ю.
 	\vspace{0.7cm}	
 }
-\date [30-05-13]{30 мая 2013}
+\date [21-05-13]{21 мая 2013}
 
 \begin{frame}[plain]
 	\titlepage
@@ -90,8 +90,21 @@
 
 \begin{frame}{Этапы работы}
 	\begin{itemize}
-		\item Получение расширенным парсером языка образцы
+		% \item Получение расширенным парсером языка образцы
+		\item Получение образцов с помощью расширенного синтаксического анализатора
 		\item Составление документа по дереву
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Алгоритм сопоставления}
+	\begin{itemize}
+		\item Простое сопоставление деревьев сверху-вниз
+		\item $O(T \times B \times M)$
+		\begin{itemize}
+			\item T --- размер дерева
+			\item B --- максимальный размер образца
+			\item M --- количество образцов
+		\end{itemize}
 	\end{itemize}
 \end{frame}
 
@@ -112,7 +125,6 @@
 		\inputminted{c}{codes/secondTemplatePow.l}
 	\end{block}
 \end{frame}
-
 
 \begin{frame}{Результат}
 	\begin{itemize}
