@@ -66,19 +66,15 @@
 Рассмотрим другой пример. Пусть нам нужно текстовое представление синтаксического дерева конструкции “\lstinline{if}”, и заданы шаблоны c рисунков~\ref{fig:ifTemplate2} и \ref{fig:ifTemplate1}, причем вариант, изображенный на рисунке~\ref{fig:ifTemplate2} выбирается в случае, если условие и ветки могут быть напечатаны в одну строчку.
 
 \begin{figure}[h!]
-	\begin{subfigure}[b]{0.45\textwidth}
-		% \inputminted{haskell}{codes/ifTemplate2.hs}
+	\subfloat[]{
 		\lstinputlisting[language=Haskell]{codes/ifTemplate2.hs}
-		\caption{}
-		\label{fig:ifTemplate2}
-	\end{subfigure}
-	\hspace{1cm}
-	\begin{subfigure}[b]{0.45\textwidth}
-		% \inputminted{haskell}{codes/ifTemplate1.hs}
+		\label{fig:ifTemplate2}	
+	}
+	\quad
+	\subfloat[]{
 		\lstinputlisting[language=Haskell]{codes/ifTemplate1.hs}
-		\caption{}
-		\label{fig:ifTemplate1}
-	\end{subfigure}
+		\label{fig:ifTemplate1}	
+	}
 	\caption{Представления для конструкции “\lstinline{if}”}
 \end{figure}
 
@@ -86,42 +82,40 @@
 Тогда для деревьев, представленных на рисунках \ref{fig:ifImage1} и \ref{fig:ifImage2}, будут напечатаны коды с рисунков \ref{fig:ifCode1} и \ref{fig:ifCode2} соответственно.
 
 \begin{figure}[h!]
-	\begin{subfigure}[b]{0.60\linewidth}
+	\subfloat[]{
 		\centering
-		\includegraphics[width=\textwidth]{if1}
-		\caption{}
+		\includegraphics[width=0.6\textwidth]{if1}
 		\label{fig:ifImage1}
-	\end{subfigure}
-	\hspace{0.5cm}
-	\begin{subfigure}[b]{0.30\linewidth}
+	}
+	\quad
+	\subfloat[]{
 		\centering
 		% \inputminted{haskell}{codes/ifCode1.hs}
 		\lstinputlisting[language=Haskell]{codes/ifCode1.hs}
-		\caption{}
-		\label{fig:ifCode1}
-	\end{subfigure}
+		\label{fig:ifCode1}	
+	}
 
 	\caption{Использование представления с рис.~\ref{fig:ifTemplate2}}
 \end{figure}
 
-\begin{figure}[h!]
-	\begin{subfigure}[b]{0.60\linewidth}
-		\centering
-		\includegraphics[width=\textwidth]{if2}
-		\caption{}
-		\label{fig:ifImage2}
-	\end{subfigure}
-	\hspace{0.5cm}
-	\begin{subfigure}[b]{0.30\linewidth}
-		\centering
-		% \inputminted{haskell}{codes/ifCode2.hs}
-		\lstinputlisting[language=Haskell]{codes/ifCode2.hs}
-		\caption{}
-		\label{fig:ifCode2}
-	\end{subfigure}
+% \begin{figure}[h!]
+% 	\begin{subfigure}[b]{0.60\linewidth}
+% 		\centering
+% 		\includegraphics[width=\textwidth]{if2}
+% 		\caption{}
+% 		\label{fig:ifImage2}
+% 	\end{subfigure}
+% 	\hspace{0.5cm}
+% 	\begin{subfigure}[b]{0.30\linewidth}
+% 		\centering
+% 		% \inputminted{haskell}{codes/ifCode2.hs}
+% 		\lstinputlisting[language=Haskell]{codes/ifCode2.hs}
+% 		\caption{}
+% 		\label{fig:ifCode2}
+% 	\end{subfigure}
 
-	\caption{Использование представления с рис.~\ref{fig:ifTemplate1}}
-\end{figure}
+% 	\caption{Использование представления с рис.~\ref{fig:ifTemplate1}}
+% \end{figure}
 
 % Постановка задачи
 То, что не существует четких критериев красоты кода, а также отсутствие библиотек, предоставляющих возможность описать принтер в виде, подобном

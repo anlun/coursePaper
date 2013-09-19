@@ -25,18 +25,20 @@
 
 Так корректный код (см. рисунок~\ref{fig:pythonCode}) может превратиться в некорректный (см. рисунок~\ref{fig:pythonCodeBad}).
 \begin{figure}[h!]
-	\begin{subfigure}[b]{0.45\linewidth}
-		% \inputminted{python}{codes/pythonCode.py}
+	\centering
+	\null\hfill
+	\subfloat[]{
+		\centering
 		\lstinputlisting[language=Python]{codes/pythonCode.py}
-		\caption{}
-		\label{fig:pythonCode}
-	\end{subfigure}
-	\hspace{0.5cm}
-	\begin{subfigure}[b]{0.45\linewidth}
-		% \inputminted{python}{codes/pythonCodeBad.py}
+		\label{fig:pythonCode}	
+	}
+	\null\hfill
+	\subfloat[]{
+		\centering
 		\lstinputlisting[language=Python]{codes/pythonCodeBad.py}
-		\caption{}
 		\label{fig:pythonCodeBad}
-	\end{subfigure}
+	}
+	\hfill
+	\null
 	\caption{Пример работы принтера для языка Python}
 \end{figure}

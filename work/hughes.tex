@@ -12,19 +12,19 @@
 Так, с помощью функции “\lstinline[language=Haskell]{text}” по строке получается документ, оператор “\textbf{<>}” соединяет два документа горизонтально (см. рисунок~\ref{fig:hughesHorComp}), а оператор “\textbf{\$\$}” соединяет документы вертикально (см. рисунок~\ref{fig:hughesVertComp}).
 
 \begin{figure}[ht]
-	\begin{subfigure}[b]{0.45\linewidth}
+	\subfloat[Комбинатор “\textbf{<>}”]
+	{
 		\centering
-		\includegraphics[width=\textwidth]{hughesHorComp}
-		\caption{Комбинатор “\textbf{<>}”}
+		\includegraphics[width=0.45\textwidth]{hughesHorComp}
 		\label{fig:hughesHorComp}
-	\end{subfigure}
-	\hspace{0.5cm}
-	\begin{subfigure}[b]{0.45\linewidth}
+	}
+	\quad
+	\subfloat[Комбинатор “\textbf{\$\$}”]
+	{
 		\centering
-		\includegraphics[width=\textwidth]{hughesVertComp}
-		\caption{Комбинатор “\textbf{\$\$}”}
+		\includegraphics[width=0.45\textwidth]{hughesVertComp}
 		\label{fig:hughesVertComp}
-	\end{subfigure}
+	}
 
 	\caption{Пример работы комбинаторов}
 \end{figure}
