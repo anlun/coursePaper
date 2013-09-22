@@ -1,0 +1,188 @@
+\documentclass[sans]{beamer}
+
+% \usetheme{Boadilla}
+\mode<presentation>
+{
+	% \usetheme{CambridgeUS}
+	\usetheme{AnnArbor}
+	% \usetheme{Bergen}
+	\usecolortheme{beaver}
+	% \usefonttheme{serif}
+	% \usefonttheme{professionalfonts}
+	% \usefonttheme{structureitalicserif}
+}
+
+\usepackage{cmap}
+\usepackage{listings}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{minted}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+% \usepackage[labelformat=empty]{subcaption}
+\usepackage[labelformat=empty]{caption}
+
+% \usefonttheme{professionalfonts} % using non standard fonts for beamer
+% \usefonttheme{sansserif} % default family is serif
+% \usepackage{fontspec}
+% \usepackage[T2A]{fontenc}
+% \setmainfont{Comic Sans MS}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% \setmainfont{Sans}
+
+\begin{document}
+
+\title    [Принтеры] {Принтеры}
+% \subtitle {Летняя стажировка}
+% \institute {JetBrains, СПбГУ}
+
+\institute{JetBrains, СПбГУ \\
+	\vspace{0.7cm}
+	Руководитель: к.ф.-м.н. Булычев Д.Ю.
+	\vspace{0.7cm}	
+}
+
+
+\author
+[Подкопаев Антон]{Подкопаев Антон, \texttt podkoav239@gmail.com}
+\date [27-09-13]{27 сентября 2013}
+
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+\section{Постановка задачи}
+
+\begin{frame}{Печать AST с помощью шаблонов (1)}
+	% \begin{center}
+	\includegraphics[height = 3cm]{images/tree.jpg}
+	% \hspace{0.5cm}
+	\begin{figure}
+		\includegraphics[width = 2cm]{images/arrow.png}
+	\end{figure}
+	% \hspace{0.5cm}
+
+	\hfill
+	\includegraphics[height = 3cm]{images/text.png}
+	% \end{center}
+\end{frame}
+
+\begin{frame}{Печать AST с помощью шаблонов (2)}
+	\begin{itemize}
+		\item Модельный язык L
+		\item Специальные шаблоны
+		\item Расширенный парсер
+	\end{itemize}
+	\begin{block}{}
+		\inputminted{pascal}{codes/l_write.t}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Постановка задачи (1)}
+	\begin{itemize}
+		\item Апробирование на примере Java
+		\item Plugin для IDEA
+	\end{itemize}
+	\begin{itemize}
+		\item Отказ от специализированного парсера
+		\item Получение шаблонов из обычных исходников
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Постановка задачи (2)}
+	\begin{columns}[T]
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\includegraphics[width = \linewidth]{images/trueFalse.png}
+				\caption{Эталон}
+			\end{figure}
+			\begin{figure}
+				\includegraphics[height = 3cm, width = \linewidth]{images/mandel.png}
+				\caption{Для переформатирования}
+			\end{figure}
+		\end{column}
+
+		\pause
+
+		\begin{column}{.5\textwidth}
+		\begin{minipage}[c][0.8\textheight][c]{\linewidth}
+			\begin{figure}[c]
+				\includegraphics[width = \linewidth]{images/rand.png}
+				\caption{Результат}
+			\end{figure}
+		\end{minipage}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Существующие решения}
+	\includegraphics[width = \linewidth]{images/quiz_night.jpg}
+\end{frame}
+
+\begin{frame}{Можно ли проще?}
+	% \pause
+	Вообще-то да...
+	\newline
+
+	\begin{columns}
+		\begin{column}{.4\textwidth}
+			\begin{figure}
+				\includegraphics[width = \linewidth]{images/country.png}
+			\end{figure}
+		\end{column}
+
+		\begin{column}{.1\textwidth}
+			\begin{figure}
+				\includegraphics[width = \linewidth]{images/arrow.png}
+			\end{figure}
+		\end{column}
+
+		\begin{column}{.4\textwidth}
+			\begin{figure}
+				\includegraphics[width = \linewidth]{images/snapshot1.png}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\section{Решение задачи}
+
+\begin{frame}{Инструменты}
+	\begin{center}
+		\includegraphics[width = 0.3\linewidth]{images/idea-logo.png}
+		\hspace{3cm}
+		\includegraphics[width = 0.3\linewidth]{images/kotlin-logo.jpg}
+	\end{center}
+\end{frame}
+
+\section{Результаты работы}
+
+\begin{frame}{Существующие проблемы}
+	\begin{itemize}
+		\item Несколько стилей в "эталоне"
+		\item Экспонента в списках
+	\end{itemize}
+\end{frame}
+
+\section{Будущее развитие}
+
+\begin{frame}{В будущем}
+	\begin{itemize}
+		\item Нормализация шаблонов
+		\item Анализ эталона на полноту
+		\item Машинное обучение?
+	\end{itemize}
+\end{frame}
+
+\section{Конец}
+
+\begin{frame}{В завершение...}
+	Репозиторий: \color{blue} \underline{\url{bitbucket.org/anlun/printerplugin}}
+\end{frame}
+
+\end{document}
