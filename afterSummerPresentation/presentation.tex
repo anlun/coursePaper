@@ -30,9 +30,29 @@
 % \usepackage[T2A]{fontenc}
 % \setmainfont{Comic Sans MS}
 
-\usepackage[utf8]{inputenc}
-\usepackage[russian]{babel}
+% \usepackage[utf8]{inputenc}
+% \usepackage[russian]{babel}
 
+\usepackage{fontspec}
+% \setmainfont[Mapping=tex-text]{CMU Serif}
+
+
+
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+
+% \newfontfamily\cyrillicfont[Script=Cyrillic]{Comic Sans MS}
+% \newfontfamily{\cyrillicfontt} {Comic Sans MS}
+% \newfontfamily{\cyrillicfonttt}{Comic Sans MS}
+
+\setmainfont[Ligatures=TeX]{DejaVu Serif}
+\setsansfont[Ligatures=TeX]{DejaVu Sans}
+% \setmainfont[Ligatures=TeX]{Comic Sans MS}
+% \setsansfont[Ligatures=TeX]{Comic Sans MS}
+\setmonofont{DejaVu Sans Mono}
+
+% \setmathfont{XITS Math}
+% \defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
 
 \begin{document}
 
