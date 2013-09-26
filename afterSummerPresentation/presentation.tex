@@ -94,15 +94,6 @@
 \begin{frame}{Область применения}
 	Языковые процессоры
 	\begin{itemize}
-		\item Компиляция
-		\item Суперкомпиляция
-		\item Декомпиляция
-		\item Рефакторинг
-		\item ...
-	\end{itemize}
-	\vspace{0.5cm}
-	Этапы работы
-	\begin{itemize}
 		\item Синтаксический анализ
 		\item Преобразование
 		\item Представление результата
@@ -118,27 +109,41 @@
 	\begin{itemize}
 		\item Модельный язык L
 		\item Специальные шаблоны
-		\item Расширенный парсер
+		\item Расширенный парсер 
 	\end{itemize}
 	\begin{block}{}
 		\inputminted{pascal}{codes/l_write.t}
 	\end{block}
 \end{frame}
 
+\begin{frame}{Печать AST с помощью шаблонов. Алгоритм}
+	\begin{itemize}
+		\item Сопоставление деревьев сверху-вниз
+		\item $O(T \times B \times M)$
+		\begin{itemize}
+			\item T --- размер дерева
+			\item B --- максимальный размер образца
+			\item M --- количество образцов
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
 \section{Постановка задачи}
 
-\begin{frame}{Постановка задачи (1)}
+\begin{frame}{Постановка задачи}
 	\begin{itemize}
-		\item Апробирование на примере Java
+		\item Апробирование для Java
 		\item Плагин для IDEA
+		\item Алгоритм, перебирающий все подходящие шаблоны
 	\end{itemize}
+	\pause
 	\begin{itemize}
 		\item Отказ от специализированного парсера
 		\item Получение шаблонов из обычных исходников
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Постановка задачи (2)}
+\begin{frame}{}
 	\begin{columns}[T]
 		\begin{column}{.5\textwidth}
 			\begin{figure}
@@ -154,19 +159,80 @@
 		\pause
 
 		\begin{column}{.5\textwidth}
-		\begin{minipage}[c][0.8\textheight][c]{\linewidth}
-			\begin{figure}[c]
-				\includegraphics[width = \linewidth]{images/rand.png}
-				\caption{Результат}
-			\end{figure}
-		\end{minipage}
+			\begin{minipage}[c][0.8\textheight][c]{\linewidth}
+				\begin{figure}[c]
+					\includegraphics[width = \linewidth]{images/rand.png}
+					\caption{Результат}
+				\end{figure}
+			\end{minipage}
+
 		\end{column}
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Существующие решения}
-	\includegraphics[width = \linewidth]{images/quiz_night.jpg}
+% \begin{frame}{Существующие решения}
+% 	\includegraphics[width = \linewidth]{images/quiz_night.jpg}
+% \end{frame}
+
+% \begin{frame}{Инструменты}
+% 	\begin{center}
+% 		\includegraphics[width = 0.3\linewidth]{images/idea-logo.png}
+% 		\hspace{3cm}
+% 		\includegraphics[width = 0.3\linewidth]{images/kotlin-logo.jpg}
+% 	\end{center}
+% \end{frame}
+
+\section{Решение задачи}
+
+\begin{frame}{Трудности}
+	\begin{itemize}
+		\item Вырезка шаблонов
+		\item Комментарии
+		\item Экспонента в списках и бинарных выражениях
+		\begin{itemize}
+			\item Фиксированные варианты
+		\end{itemize}
+	\end{itemize}
+
+	\begin{itemize}
+		\item Требуется большой эталон 
+		\item Несколько стилей в эталоне
+		\item Экспоненциальность алгоритма
+		\begin{itemize}
+			\item Локальный выбор 
+		\end{itemize}
+	\end{itemize}
 \end{frame}
+
+% \begin{frame}{Комментарии}
+	
+% \end{frame}
+
+\section{Будущее развитие}
+
+\begin{frame}{В будущем}
+	\begin{itemize}
+		\item Нормализация шаблонов
+		\item Анализ эталона на полноту
+		\item Сохранение пользовательского форматирования?
+		\item Интеграция с Formatter?
+		\item Машинное обучение?
+	\end{itemize}
+\end{frame}
+
+\section{Результат}
+
+\begin{frame}{Результат}
+	\begin{itemize}
+		\item Прототип плагина
+			\newline
+			\color{blue}\underline{\url{bitbucket.org/anlun/printerplugin}}
+			\color{black}
+		\item Расширен общий подход
+	\end{itemize}
+\end{frame}
+
+\appendix
 
 \begin{frame}{Можно ли проще?}
 	% \pause
@@ -192,56 +258,6 @@
 			\end{figure}
 		\end{column}
 	\end{columns}
-\end{frame}
-
-\begin{frame}{Инструменты}
-	\begin{center}
-		\includegraphics[width = 0.3\linewidth]{images/idea-logo.png}
-		\hspace{3cm}
-		\includegraphics[width = 0.3\linewidth]{images/kotlin-logo.jpg}
-	\end{center}
-\end{frame}
-
-\section{Решение задачи}
-
-\begin{frame}{Трудности}
-	\begin{itemize}
-		\item Вырезка шаблонов
-		\item Комментарии
-		\item Экспонента в списках и бинарных выражениях
-		\begin{itemize}
-			\item Фиксированные варианты
-		\end{itemize}
-	\end{itemize}
-
-	\begin{itemize}
-		\item Требуется большой эталон 
-		\item Несколько стилей в эталоне
-	\end{itemize}
-\end{frame}
-
-\section{Будущее развитие}
-
-\begin{frame}{В будущем}
-	\begin{itemize}
-		\item Нормализация шаблонов
-		\item Анализ эталона на полноту
-		\item Сохранение пользовательского форматирования?
-		\item Интеграция с Formatter?
-		\item Машинное обучение?
-	\end{itemize}
-\end{frame}
-
-\section{Результат}
-
-\begin{frame}{Результат}
-	\begin{itemize}
-		\item Прототип плагина
-			\newline
-			\color{blue}\underline{\url{bitbucket.org/anlun/printerplugin}}
-			\color{black}
-		\item Расширен общий подход
-	\end{itemize}
 \end{frame}
 
 \end{document}
