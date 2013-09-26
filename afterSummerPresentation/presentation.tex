@@ -56,7 +56,7 @@
 
 \begin{document}
 
-\title    [Принтеры] {Принтеры}
+\title[Форматирование по эталону] {Форматирование по эталону}
 % \subtitle {Летняя стажировка}
 % \institute {JetBrains, СПбГУ}
 
@@ -75,9 +75,9 @@
 	\titlepage
 \end{frame}
 
-\section{Постановка задачи}
+\section{Описание контекста задачи}
 
-\begin{frame}{Печать AST с помощью шаблонов (1)}
+\begin{frame}{Печать AST}
 	% \begin{center}
 	\includegraphics[height = 3cm]{images/tree.jpg}
 	% \hspace{0.5cm}
@@ -91,7 +91,30 @@
 	% \end{center}
 \end{frame}
 
-\begin{frame}{Печать AST с помощью шаблонов (2)}
+\begin{frame}{Область применения}
+	Языковые процессоры
+	\begin{itemize}
+		\item Компиляция
+		\item Суперкомпиляция
+		\item Декомпиляция
+		\item Рефакторинг
+		\item ...
+	\end{itemize}
+	\vspace{0.5cm}
+	Этапы работы
+	\begin{itemize}
+		\item Синтаксический анализ
+		\item Преобразование
+		\item Представление результата
+		% Часто результат - программа на другом языке
+		\begin{itemize}
+			\item \textcolor{red}{Код программы}
+			\item ...
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Печать AST с помощью шаблонов}
 	\begin{itemize}
 		\item Модельный язык L
 		\item Специальные шаблоны
@@ -101,6 +124,8 @@
 		\inputminted{pascal}{codes/l_write.t}
 	\end{block}
 \end{frame}
+
+\section{Постановка задачи}
 
 \begin{frame}{Постановка задачи (1)}
 	\begin{itemize}
@@ -169,8 +194,6 @@
 	\end{columns}
 \end{frame}
 
-\section{Решение задачи}
-
 \begin{frame}{Инструменты}
 	\begin{center}
 		\includegraphics[width = 0.3\linewidth]{images/idea-logo.png}
@@ -179,16 +202,21 @@
 	\end{center}
 \end{frame}
 
-\section{Результаты работы}
+\section{Решение задачи}
 
-\begin{frame}{Существующие проблемы}
+\begin{frame}{Трудности}
 	\begin{itemize}
-		\item Требуется большой эталон 
-		\item Несколько стилей в эталоне
-		\item Экспонента в списках
+		\item Вырезка шаблонов
+		\item Комментарии
+		\item Экспонента в списках и бинарных выражениях
 		\begin{itemize}
 			\item Фиксированные варианты
 		\end{itemize}
+	\end{itemize}
+
+	\begin{itemize}
+		\item Требуется большой эталон 
+		\item Несколько стилей в эталоне
 	\end{itemize}
 \end{frame}
 
@@ -198,6 +226,7 @@
 	\begin{itemize}
 		\item Нормализация шаблонов
 		\item Анализ эталона на полноту
+		\item Сохранение пользовательского форматирования?
 		\item Интеграция с Formatter?
 		\item Машинное обучение?
 	\end{itemize}
@@ -208,7 +237,10 @@
 \begin{frame}{Результат}
 	\begin{itemize}
 		\item Прототип плагина
-		\item \color{blue} \underline{\url{bitbucket.org/anlun/printerplugin}}
+			\newline
+			\color{blue}\underline{\url{bitbucket.org/anlun/printerplugin}}
+			\color{black}
+		\item Расширен общий подход
 	\end{itemize}
 \end{frame}
 
