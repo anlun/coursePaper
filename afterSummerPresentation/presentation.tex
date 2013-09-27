@@ -109,24 +109,28 @@
 	\begin{itemize}
 		\item Модельный язык L
 		\item Специальные шаблоны
-		\item Расширенный парсер 
+		\item Расширенный парсер
+		\item Сопоставление деревьев сверху-вниз
+		\begin{itemize}
+			\item $O(T \times B \times M)$
+		\end{itemize}
 	\end{itemize}
 	\begin{block}{}
 		\inputminted{pascal}{codes/l_write.t}
 	\end{block}
 \end{frame}
 
-\begin{frame}{Печать AST с помощью шаблонов. Алгоритм}
-	\begin{itemize}
-		\item Сопоставление деревьев сверху-вниз
-		\item $O(T \times B \times M)$
-		\begin{itemize}
-			\item T --- размер дерева
-			\item B --- максимальный размер образца
-			\item M --- количество образцов
-		\end{itemize}
-	\end{itemize}
-\end{frame}
+% \begin{frame}{Печать AST с помощью шаблонов. Алгоритм}
+% 	\begin{itemize}
+% 		\item 
+% 		\item $O(T \times B \times M)$
+% 		\begin{itemize}
+% 			\item T --- размер дерева
+% 			\item B --- максимальный размер образца
+% 			\item M --- количество образцов
+% 		\end{itemize}
+% 	\end{itemize}
+% \end{frame}
 
 \section{Постановка задачи}
 
